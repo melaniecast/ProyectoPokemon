@@ -6,10 +6,11 @@ class PokemonPlanta(Pokemon):
         
         
     def atacar(self):
-        return super().atacar()
+        return f"{self.nombre} usa lianas para golpear"
     
     def defensa(self):
-        return super().defensa()
+        return f"{self.nombre} lanza somnifero al oponente"
     
     def descanso(self):
-        return super().descanso()
+        return f"{self.nombre} esta recuperando energia - sacrifica un turno"
+    

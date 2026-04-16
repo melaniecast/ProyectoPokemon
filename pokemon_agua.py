@@ -5,10 +5,12 @@ class PokemonAgua(Pokemon):
         super().__init__(nombre, vida_maxima, energia_maxima)
         
     def atacar(self):
-        return super().atacar()
+        return f"{self.nombre} uso chorro de Agua!"
     
     def defensa(self):
-        return super().defensa()
+        return f"{slef.nombre} se escondio en su caparazon"
     
     def descanso(self):
-        return super().descanso()
+        return f"{self.nombre} esta recuperando energia - sacrifica un turno"
+    
+    

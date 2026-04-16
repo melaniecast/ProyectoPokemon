@@ -5,10 +5,10 @@ class PokemonFuego(Pokemon):
         super().__init__(nombre, vida_maxima, energia_maxima)
         
     def atacar(self):
-        return super().atacar()
+        return f"{self.nombre} usa lanzallama"
     
     def defensa(self):
-        return super().defensa()
+        return f"{self.nombre} genera pantalla de humo para evadir el ataque"
     
     def descanso(self):
-        return super().descanso()
+        return f"{self.nombre} esta recuperando energia - sacrifica un turno"

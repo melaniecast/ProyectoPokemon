@@ -5,10 +5,10 @@ class PokemonElectrico(Pokemon):
         super().__init__(nombre, vida_maxima, energia_maxima)
         
     def atacar(self):
-        return super().atacar()
+        return f"{self.nombre} lanza rayo!"
     
     def defensa(self):
-        return super().defensa()
+        return f"{self.nombre} utiliza estatica!"
     
     def descanso(self):
-        return super().descanso()
+        return f"{self.nombre} esta recuperando energia - sacrifica un turno"
