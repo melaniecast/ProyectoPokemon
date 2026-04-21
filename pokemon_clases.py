@@ -1,27 +1,49 @@
 from abc import ABC, abstractmethod
 
+'''guarda-nombre, hp actual, hp maximo, energia actual, energia maxima'''
 class Pokemon(ABC):
-    def __init__(self, nombre, vida_maxima, energia_maxima):
+    def __init__(self, nombre, hp_maximo, energia_maxima):
         self.nombre = nombre
-        self._vida_maxima = vida_maxima
-        self._energia_maxima = energia_maxima
-        self._vida_actua = vida_maxima
         
+        self._hp_maximo = hp_maximo
+        self._hp_actual = self.hp_maximo
+        
+        self._energia_maxima = energia_maxima
+        self._energia_actual = energia_maxima
+        
+        
+        
+    @property
+    def hp_actual(self):
+        return self._hp_actual
     
     @property
-    def vida_actual(self):
-        return self._vida_actual
-        
+    def hp_maximo(self):
+        return self._hp_maximo
+    
+    
+    @property
+    def energia_actual(self):
+        return self._energia_actual
+    
+    @property
+    def energia_maxima(self):
+        return self._energia_maxima
+    
+    
         
     @abstractmethod
-    def atacar(self):
+    def atacar(self, oponente):
         pass
+    
     @abstractmethod   
     def defensa(self):
         pass
+    
     @abstractmethod
     def descanso(self):
-        pass    
+        pass  
+    
     
     
     
