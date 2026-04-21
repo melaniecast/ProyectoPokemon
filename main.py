@@ -14,61 +14,101 @@ def menu_batalla():
     print ('='*50)
     print('Selecciones el Modo de Juego: \n1. Jugador vs Jugador\n2. Jugador vs Computadora')
     opcion = input('> Opción: ')
+    
     if opcion =='1':
         mostrar_catalogo_disponible()
+        
         eleccion_jugador_1 = input('Jugador 1, elija el numero de su Pokémon: ')
         print(f'¡Has seleccionado a {eleccion_jugador_1}')
         eleccion_jugador_2 = input('Jugador 2, elija el numero de su Pokémon: ')
         print(f'¡Has seleccionado a {eleccion_jugador_2}')
-        if eleccion_jugador_1 == '1':
-            
+        print('¡COMIENZA LA BATALLA!')
+        print(f'{eleccion_jugador_1} ({tipo}) vs {eleccion_jugador_2} ({tipo})')
+        
+        datos_jugador1 = CATALOGO_POKEMON[eleccion_jugador_1]
+        
+       
+        
+        
+        if tipo == 'Agua':
+            pokemon_jugador1 = PokemonAgua(datos_jugador1['nombre'], datos_jugador1['hp_maximo'], datos_jugador1['energia_maxima'])
+        elif tipo == 'Fuego':
+            pokemon_jugador1 = PokemonFuego(datos_jugador1['nombre'], datos_jugador1['hp_maximo'], datos_jugador1['energia_maxima'])
+        elif tipo == 'Planta':
+            pokemon_jugador1 = PokemonPlanta(datos_jugador1['nombre'], datos_jugador1['hp_maximo'], datos_jugador1['energia_maxima'])
+        elif tipo == 'Electrico':
+            pokemon_jugador1 = PokemonElectrico(datos_jugador1['nombre'], datos_jugador1['hp_maximo'], datos_jugador1['energia_maxima'])
             
         
         
-# 2 metricas absolutas*
-# 1. HP(puntos de salud/ health points)
-#    vitalidad fisica del pokemon*
-#    hp == 0 = pkemon desmayado
-#    hp != numeros negativos
-# 2. EP(puntos de energia/ Energy points)
-#     resistencia(stamina) del pokemon*
-#     ataque(fisico/magico) = menos fuerza(cansancio)
-#     ataque != si fuerza < EP minima (reserva)
+        datos_jugador2 = CATALOGO_POKEMON[eleccion_jugador_2]
+        
+        if tipo == 'Agua':
+            pokemon_jugador2 = PokemonAgua(datos_jugador2['nombre'], datos_jugador2['hp_maximo'], datos_jugador2['energia_maxima'])
+        elif tipo == 'Fuego':
+            pokemon_jugador2 = PokemonFuego(datos_jugador2['nombre'], datos_jugador2['hp_maximo'], datos_jugador2['energia_maxima'])
+        elif tipo == 'Planta':
+            pokemon_jugador2 = PokemonPlanta(datos_jugador2['nombre'], datos_jugador2['hp_maximo'], datos_jugador2['energia_maxima'])
+        elif tipo == 'Electrico':
+            pokemon_jugador2 = PokemonElectrico(datos_jugador2['nombre'], datos_jugador2['hp_maximo'], datos_jugador2['energia_maxima'])
+        
+        
+    elif opcion =='2':
+        mostrar_catalogo_disponible()
+        
+        eleccion_jugador_1 = input('Jugador 1, elija el numero de su Pokémon: ')
+        print(f'¡Has seleccionado a {eleccion_jugador_1}')
+        import random
+        eleccion_jugador_2 = random.choice(list(CATALOGO_POKEMON.keys()))
+        
+        print(f'¡COMPUTADORA has seleccionado a {eleccion_jugador_2}')
+        print('¡COMIENZA LA BATALLA!')
+        print(f'{eleccion_jugador_1} ({tipo}) vs {eleccion_jugador_2} ({tipo})')
+        
+        datos_jugador1 = CATALOGO_POKEMON[eleccion_jugador_1]
+        
+       
+        
+        
+        if tipo == 'Agua':
+            pokemon_jugador1 = PokemonAgua(datos_jugador1['nombre'], datos_jugador1['hp_maximo'], datos_jugador1['energia_maxima'])
+        elif tipo == 'Fuego':
+            pokemon_jugador1 = PokemonFuego(datos_jugador1['nombre'], datos_jugador1['hp_maximo'], datos_jugador1['energia_maxima'])
+        elif tipo == 'Planta':
+            pokemon_jugador1 = PokemonPlanta(datos_jugador1['nombre'], datos_jugador1['hp_maximo'], datos_jugador1['energia_maxima'])
+        elif tipo == 'Electrico':
+            pokemon_jugador1 = PokemonElectrico(datos_jugador1['nombre'], datos_jugador1['hp_maximo'], datos_jugador1['energia_maxima'])
+            
+        
+        
+        datos_jugador2 = CATALOGO_POKEMON[eleccion_jugador_2]
+        
+        if tipo == 'Agua':
+            pokemon_jugador2 = PokemonAgua(datos_jugador2['nombre'], datos_jugador2['hp_maximo'], datos_jugador2['energia_maxima'])
+        elif tipo == 'Fuego':
+            pokemon_jugador2 = PokemonFuego(datos_jugador2['nombre'], datos_jugador2['hp_maximo'], datos_jugador2['energia_maxima'])
+        elif tipo == 'Planta':
+            pokemon_jugador2 = PokemonPlanta(datos_jugador2['nombre'], datos_jugador2['hp_maximo'], datos_jugador2['energia_maxima'])
+        elif tipo == 'Electrico':
+            pokemon_jugador2 = PokemonElectrico(datos_jugador2['nombre'], datos_jugador2['hp_maximo'], datos_jugador2['energia_maxima'])
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        tipo = datos_jugador1['tipo']
+        tipo = datos_jugador2['tipo']  
+        
+        
 
 
 
-# '''Combate por turnos 1 vs 1''' 
-#dos modos de juego*
-# 1. Modo jugador vsjugador(PvP)
-#    se pide instruccion por teclado*
-# 2. Modo jugador vs Computadora (PvE)\
-#     usuario = pokemon , 
-#     computadora = libreria nativa random(atacar, defender o descansar)
 
-# '''modos''
-# if modo == 'ataque' 
-#     resta energia (EP) -  es especifica
-#     dano =  calcula dano infligido al oponente basandose en la ventaja elemental 
-# if modo == 'defensa'
-#     resta energia (EP) - es minima
-#     defensa == escudo (reduce dano proximo ataque recibido /2)
-
-# if modo == 'descanso'
-#     pokemon == no turno 
-#     EP restaurada 
-
-# '''Matriz de dano elemental'''
-# ecosistema = [Agua, fuego, planta, electrico]
-
-# agua = dano *2 contra fuego
-# fuego = dano *2 contra planta
-# planta = dano *2 contra agua 
-# electrico no dano doble = 20% paralizar = pierde siguiente turno 
-
-# '''archivos '''
-# pokemon_clases.py* -  contiene las clases hijas (agua, fuego, planta, electrico)
-# heredan de la clase pokemon**
-# cada una en unarchivo diferente e importar cada clase* 
-
-# pokedex.py* -diccionario - informacion en crudo 
-# se debe importar el catalogo al archivo principal(*main.py*)**
