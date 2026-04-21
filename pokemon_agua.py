@@ -1,4 +1,5 @@
 from pokemon_clases import Pokemon
+from pokedex import CATALOGO_POKEMON
 
 
 class PokemonAgua(Pokemon):

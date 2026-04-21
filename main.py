@@ -1,7 +1,30 @@
 # '''proyecto integrador POO'''
+from pokedex import CATALOGO_POKEMON
+from pokedex import mostrar_catalogo_disponible
+from pokemon_clases import Pokemon
+from pokemon_agua import PokemonAgua
+from pokemon_electrico import PokemonElectrico
+from pokemon_fuego import PokemonFuego
+from pokemon_planta import PokemonPlanta
+# 
 
-# '''simulador - batalla de consola'''
-
+def menu_batalla():
+    print ('='*50)
+    print('     SIMLADOR DE BATALLAS POKÉMON (POO)     ')
+    print ('='*50)
+    print('Selecciones el Modo de Juego: \n1. Jugador vs Jugador\n2. Jugador vs Computadora')
+    opcion = input('> Opción: ')
+    if opcion =='1':
+        mostrar_catalogo_disponible()
+        eleccion_jugador_1 = input('Jugador 1, elija el numero de su Pokémon: ')
+        print(f'¡Has seleccionado a {eleccion_jugador_1}')
+        eleccion_jugador_2 = input('Jugador 2, elija el numero de su Pokémon: ')
+        print(f'¡Has seleccionado a {eleccion_jugador_2}')
+        if eleccion_jugador_1 == '1':
+            
+            
+        
+        
 # 2 metricas absolutas*
 # 1. HP(puntos de salud/ health points)
 #    vitalidad fisica del pokemon*

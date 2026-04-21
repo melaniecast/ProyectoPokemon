@@ -1,4 +1,5 @@
 from pokemon_clases import Pokemon
+from pokedex import CATALOGO_POKEMON
 
 class PokemonFuego(Pokemon):
     def __init__(self, nombre, vida_maxima, energia_maxima):
