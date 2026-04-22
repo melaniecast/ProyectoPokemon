@@ -35,7 +35,7 @@ def menu_batalla():
         return     
             
     
-    if opcion =='1':
+    if opcion ==1:
         mostrar_catalogo_disponible()
         
         eleccion_jugador_1 = input('Jugador 1, elija el numero de su Pokémon: ')
@@ -62,7 +62,7 @@ def menu_batalla():
       
 
         
-    elif opcion =='2':
+    elif opcion ==2:
         mostrar_catalogo_disponible()
         
         eleccion_jugador_1 = input('Jugador 1, elija el numero de su Pokémon: ')
@@ -125,13 +125,17 @@ def combate(pokemon_jugador1, pokemon_jugador2):
             opcion = random.choice(['1','2','3'])
             print(f'[Computadora elige: {opcion}]')
         else:
-            opcion = input('> Opción: ')
-        
-        if opcion == '1':
+            try:
+                opcion = int(input('> Opción: '))
+            except ValueError:
+                print('Error: opcion invalida')
+                continue
+                
+        if opcion == 1:
             pokemon_actual.atacar(pokemon_oponente)
-        elif opcion == '2':
+        elif opcion == 2:
             pokemon_actual.defensa()
-        elif opcion == '3':
+        elif opcion == 3:
             pokemon_actual.descanso()
             
         turno_jugador1 = not turno_jugador1
