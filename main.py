@@ -90,9 +90,11 @@ def menu_batalla():
 
 def combate(pokemon_jugador1, pokemon_jugador2):
     turno_jugador1 =True
+    import random
     
     while pokemon_jugador1.hp_actual > 0 and pokemon_jugador2.hp_actual > 0:
-        
+        oponente_computadora = False
+        print(f'\n Estado: {pokemon_jugador1.nombre} HP: {pokemon_jugador1.hp_actual}  | {pokemon_jugador2.nombre} HP: {pokemon_jugador2.hp_actual}') 
        
         if turno_jugador1:
             pokemon_actual = pokemon_jugador1
@@ -101,6 +103,7 @@ def combate(pokemon_jugador1, pokemon_jugador2):
         else: 
             pokemon_actual = pokemon_jugador2
             pokemon_oponente = pokemon_jugador1   
+            oponente_computadora = True
             
         if pokemon_actual.paralizado:
             pokemon_actual.paralizado = False
@@ -113,6 +116,12 @@ def combate(pokemon_jugador1, pokemon_jugador2):
         print('¿Qué acción deseas realizar?')
         print('1. Atacar (Costo: 15 EP)\n2. Defender (Costo: 5 EP\n3. Descansar (Restaura: 20 EP)')
         opcion = input('> Opción: ')
+        
+        if oponente_computadora:
+            opcion = random.choice(['1','2','3'])
+            print(f'[Computadora elige: {opcion}]')
+        else:
+            opcion = input('> Opción: ')   
         
         if opcion == '1':
             pokemon_actual.atacar(pokemon_oponente)
