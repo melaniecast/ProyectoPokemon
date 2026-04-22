@@ -22,7 +22,7 @@ def crear_pokemon(datos_jugador):
         return PokemonPlanta(datos_jugador['nombre'], datos_jugador['hp_maximo'], datos_jugador['energia_maxima'])
     elif tipo == 'Electrico':
         return PokemonElectrico(datos_jugador['nombre'], datos_jugador['hp_maximo'], datos_jugador['energia_maxima'])
-    
+ 
            
 def menu_batalla():
     print ('='*50)
@@ -82,6 +82,50 @@ def menu_batalla():
         
         print('¡COMIENZA LA BATALLA!')
         print(f'{eleccion_jugador_1} ({tipo_jugador1}) vs {eleccion_jugador_2} ({tipo_jugador2})')
+
+
+
+def combate(pokemon_jugador1, pokemon_jugador2):
+    turno_jugador1 =True
+    
+    while pokemon_jugador1.hp_actual() > 0 and pokemon_jugador2.hp_actual() > 0:
+        
+        
+        print('¿Qué acción deseas realizar?')
+        print('1. Atacar (Costo: 15 EP)\n2. Defender (Costo: 5 EP\n3. Descansar (Restaura: 20 EP)')
+        opcion = input('> Opción: ')
+        
+        
+        if opcion == '1':
+            if turno_jugador1 == True:
+                pokemon_actual = pokemon_jugador1
+                pokemon_oponente = pokemon_jugador2
+                pokemon_actual.atacar(pokemon_oponente)
+                
+                    
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            else:
+                pokemon_actual = pokemon_jugador2
+                pokemon_oponente = pokemon_jugador1
+                
+                
+        
+        
+    
+    
+        
         
         
         
@@ -101,9 +145,7 @@ def menu_batalla():
         
         
         
-        
-        tipo = datos_jugador['tipo']
-        tipo = datos_jugador2['tipo']  
+
         
         
 
