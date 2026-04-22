@@ -103,7 +103,7 @@ def combate(pokemon_jugador1, pokemon_jugador2):
         else: 
             pokemon_actual = pokemon_jugador2
             pokemon_oponente = pokemon_jugador1   
-            oponente_computadora = True
+            
             
         if pokemon_actual.paralizado:
             pokemon_actual.paralizado = False
@@ -115,13 +115,13 @@ def combate(pokemon_jugador1, pokemon_jugador2):
         
         print('¿Qué acción deseas realizar?')
         print('1. Atacar (Costo: 15 EP)\n2. Defender (Costo: 5 EP\n3. Descansar (Restaura: 20 EP)')
-        opcion = input('> Opción: ')
+        
         
         if oponente_computadora:
             opcion = random.choice(['1','2','3'])
             print(f'[Computadora elige: {opcion}]')
         else:
-            opcion = input('> Opción: ')   
+            opcion = input('> Opción: ')
         
         if opcion == '1':
             pokemon_actual.atacar(pokemon_oponente)
