@@ -1,12 +1,13 @@
 
 from pokemon_clases import Pokemon
-from pokemon_fuego import PokemonFuego
+
 
 
 
 class PokemonAgua(Pokemon):
     def __init__(self, nombre, vida_maxima, energia_maxima):
         super().__init__(nombre, vida_maxima, energia_maxima)
+        
     
     
     
@@ -14,6 +15,7 @@ class PokemonAgua(Pokemon):
             
     
     def atacar(self, oponente):
+        from pokemon_fuego import PokemonFuego
         self.energia_actual -= 15
         
         

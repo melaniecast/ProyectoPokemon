@@ -1,6 +1,6 @@
 
 from pokemon_clases import Pokemon
-from pokemon_agua import PokemonAgua
+
 
 
 class PokemonPlanta(Pokemon):
@@ -10,6 +10,7 @@ class PokemonPlanta(Pokemon):
 
 
     def atacar(self, oponente):
+        from pokemon_agua import PokemonAgua
         self.energia_actual -= 15
         
         
