@@ -1,5 +1,4 @@
 from abc import ABC, abstractmethod
-from pokedex import CATALOGO_POKEMON
 
 
 class Pokemon(ABC):

@@ -1,12 +1,11 @@
-# '''proyecto integrador POO'''
+
 from pokedex import CATALOGO_POKEMON
 from pokedex import mostrar_catalogo_disponible
-from pokemon_clases import Pokemon
 from pokemon_agua import PokemonAgua
 from pokemon_electrico import PokemonElectrico
 from pokemon_fuego import PokemonFuego
 from pokemon_planta import PokemonPlanta
-# 
+
 
 
     
@@ -53,6 +52,8 @@ def menu_batalla():
         
         print('¡COMIENZA LA BATALLA!')
         print(f'{eleccion_jugador_1} ({tipo_jugador1}) vs {eleccion_jugador_2} ({tipo_jugador2})')
+        combate(pokemon_jugador1, pokemon_jugador2)
+        
         
       
 
@@ -81,7 +82,9 @@ def menu_batalla():
         print(f'¡La computadora ha seleccionado a {eleccion_jugador_2}')
         
         print('¡COMIENZA LA BATALLA!')
+        
         print(f'{eleccion_jugador_1} ({tipo_jugador1}) vs {eleccion_jugador_2} ({tipo_jugador2})')
+        combate(pokemon_jugador1, pokemon_jugador2)
 
 
 
@@ -120,6 +123,20 @@ def combate(pokemon_jugador1, pokemon_jugador2):
             
         turno_jugador1 = not turno_jugador1
         
+        
+        
+    
+
+    if pokemon_jugador1.hp_actual == 0:
+        print(f'¡Ha ganado {pokemon_jugador2.nombre}!')
+        print(f'[HP: {pokemon_jugador2.hp_actual }]  | [EP: {pokemon_jugador2.energia_actual }]')
+    else: 
+        print(f'¡Ha ganado {pokemon_jugador1.nombre}!')
+        print(f'[HP: {pokemon_jugador1.hp_actual }]  |  [EP: {pokemon_jugador1.energia_actual }]')
+            
+    
+menu_batalla()
+
         
         
        

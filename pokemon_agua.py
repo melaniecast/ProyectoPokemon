@@ -1,9 +1,7 @@
-from pokedex import CATALOGO_POKEMON
-from pokedex import mostrar_catalogo_disponible
+
 from pokemon_clases import Pokemon
-from pokemon_electrico import PokemonElectrico
 from pokemon_fuego import PokemonFuego
-from pokemon_planta import PokemonPlanta
+
 
 
 class PokemonAgua(Pokemon):
