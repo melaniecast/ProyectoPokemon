@@ -88,20 +88,44 @@ def menu_batalla():
 def combate(pokemon_jugador1, pokemon_jugador2):
     turno_jugador1 =True
     
-    while pokemon_jugador1.hp_actual() > 0 and pokemon_jugador2.hp_actual() > 0:
+    while pokemon_jugador1.hp_actual > 0 and pokemon_jugador2.hp_actual > 0:
         
+       
+        if turno_jugador1:
+            pokemon_actual = pokemon_jugador1
+            pokemon_oponente = pokemon_jugador2
+            
+        else: 
+            pokemon_actual = pokemon_jugador2
+            pokemon_oponente = pokemon_jugador1   
+            
+        if pokemon_actual.paralizado:
+            pokemon_actual.paralizado = False
+            turno_jugador1 = not turno_jugador1
+            continue
+           
+            
+            
         
         print('¿Qué acción deseas realizar?')
         print('1. Atacar (Costo: 15 EP)\n2. Defender (Costo: 5 EP\n3. Descansar (Restaura: 20 EP)')
         opcion = input('> Opción: ')
         
-        
         if opcion == '1':
-            if turno_jugador1 == True:
-                pokemon_actual = pokemon_jugador1
-                pokemon_oponente = pokemon_jugador2
-                pokemon_actual.atacar(pokemon_oponente)
+            pokemon_actual.atacar(pokemon_oponente)
+        elif opcion == '2':
+            pokemon_actual.defensa()
+        elif opcion == '3':
+            pokemon_actual.descanso()
+            
+        turno_jugador1 = not turno_jugador1
+        
+        
+        
+       
+            
                 
+        
                     
                 
                 
@@ -114,11 +138,7 @@ def combate(pokemon_jugador1, pokemon_jugador2):
                 
                 
                 
-                
-                
-            else:
-                pokemon_actual = pokemon_jugador2
-                pokemon_oponente = pokemon_jugador1
+        
                 
                 
         
