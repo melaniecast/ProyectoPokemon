@@ -28,7 +28,11 @@ def menu_batalla():
     print('     SIMLADOR DE BATALLAS POKÉMON (POO)     ')
     print ('='*50)
     print('Selecciones el Modo de Juego: \n1. Jugador vs Jugador\n2. Jugador vs Computadora')
-    opcion = input('> Opción: ')     
+    try:
+        opcion = int(input('> Opción: '))
+    except ValueError:
+        print('Error: ingrese un numero valido')
+        return     
             
     
     if opcion =='1':
